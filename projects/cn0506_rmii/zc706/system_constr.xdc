@@ -1,5 +1,5 @@
 
-set_property -dict {PACKAGE_PIN AF15  IOSTANDARD LVCMOS25} [get_ports rmii_rx_ref_clk_a            ; ## D08 FMC_LPC_LA01_CC_P
+set_property -dict {PACKAGE_PIN AF15  IOSTANDARD LVCMOS25} [get_ports rmii_rx_ref_clk_a]           ; ## D08 FMC_LPC_LA01_CC_P
 set_property -dict {PACKAGE_PIN AG15  IOSTANDARD LVCMOS25} [get_ports rmii_rx_er_a]                ; ## D09  FMC_LPC_LA01_CC_N
 set_property -dict {PACKAGE_PIN AA14  IOSTANDARD LVCMOS25} [get_ports rmii_rx_dv_a]                ; ## H14 FMC_LPC_LA07_N
 set_property -dict {PACKAGE_PIN AE12  IOSTANDARD LVCMOS25} [get_ports {rmii_rxd_a[0]}]             ; ## H07 FMC_LPC_LA02_P
