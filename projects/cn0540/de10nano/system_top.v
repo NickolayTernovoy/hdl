@@ -149,13 +149,13 @@ module system_top (
 
   // IO Buffers for I2C
 
-  wire i2c_0_scl_out;
-  wire i2c_0_scl_in;
-  wire i2c_0_sda_in;
-  wire i2c_0_sda_oe;
+  wire i2c_scl_out;
+  wire i2c_scl_in;
+  wire i2c_sda_in;
+  wire i2c_sda_oe;
 
-  ALT_IOBUF scl_iobuf (.i(1'b0), .oe(i2c_0_scl_out), .o(i2c_0_scl_in), .io(i2c_scl));
-  ALT_IOBUF sda_iobuf (.i(1'b0), .oe(i2c_0_sda_oe), .o(i2c_0_sda_in), .io(i2c_sda));
+  ALT_IOBUF scl_iobuf (.i(1'b0), .oe(i2c_scl_out), .o(i2c_scl_in), .io(i2c_scl));
+  ALT_IOBUF sda_iobuf (.i(1'b0), .oe(i2c_sda_oe), .o(i2c_sda_in), .io(i2c_sda));
 
   system_bd i_system_bd (
     .sys_clk_clk (sys_clk),
@@ -215,10 +215,10 @@ module system_top (
     .sys_hps_hps_io_hps_io_spim1_inst_MOSI (spim1_mosi),
     .sys_hps_hps_io_hps_io_spim1_inst_MISO (spim1_miso),
     .sys_hps_hps_io_hps_io_spim1_inst_SS0 (spim1_ss0),
-    .sys_hps_i2c_0_sda (i2c_0_sda_in),
-    .sys_hps_i2c_0_out_data (i2c_0_sda_oe),
-    .sys_hps_i2c_0_scl_out_clk (i2c_0_scl_out),
-    .sys_hps_i2c_0_scl_in_clk (i2c_0_scl_in),
+    .sys_hps_i2c0_sda (i2c_sda),
+    .sys_hps_i2c0_out_data (i2c_out_data),
+    .sys_hps_i2c0_clk_clk (i2c_out_clk),
+    .sys_hps_i2c0_scl_in_clk (i2c_scl),
     .sys_gpio_bd_in_port (gpio_i[31:0]),
     .sys_gpio_bd_out_port (gpio_o[31:0]),
     .sys_gpio_in_export (gpio_i[63:32]),
